@@ -10,11 +10,16 @@ RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 
 # Data Generation Parameters
-NUM_CUSTOMERS = 100
-NUM_PRODUCTS = 20
-NUM_ORDERS = 500
+NUM_CUSTOMERS = 100_000
+NUM_PRODUCTS = 10_000
+NUM_ORDERS = 1_000_000
 
-# File Paths
-CUSTOMERS_FILE = RAW_DATA_DIR / "customers.csv"
-PRODUCTS_FILE = RAW_DATA_DIR / "products.csv"
-ORDERS_FILE = RAW_DATA_DIR / "orders.csv"
+#spark settings
+SPARK_MEMORY = "8g"
+SPARK_CORES = 4
+
+
+# File Paths (Parquet format for better performance with Spark)
+CUSTOMERS_FILE = RAW_DATA_DIR / "customers.parquet"
+PRODUCTS_FILE = RAW_DATA_DIR / "products.parquet"
+ORDERS_FILE = RAW_DATA_DIR / "orders.parquet"
